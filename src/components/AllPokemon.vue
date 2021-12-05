@@ -36,10 +36,6 @@ export default {
     remove(pokemon) {
       this.$emit("remove-pokemon", pokemon);
     },
-    addMore() {
-        this.loadingShowing = true;
-        this.$emit("add-more");
-    }
   },
   computed: {
       filteredPokemon() {
