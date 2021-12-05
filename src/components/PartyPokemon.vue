@@ -1,17 +1,16 @@
 <template>
   <div id="party">
-    <h2>Party</h2>
-    <h3>{{ partyPokemon.length }} of 6</h3>
-    <div id="party-pokemon">
-
+    <div class="partytext">
+      <h2>Party <span class="smallText">{{ partyPokemon.length }}</span>  of <span>6 </span></h2>
+    </div>  
+    <div class="pokemon-outer" id="party-pokemon" :key="partyKey">
       <PokemonCard 
+        class="width"
         v-for="p in partyPokemon" 
         :key="p.id" 
         :pokemon="p" 
-        
         @click-pokemon="remove"
         />
-
     </div>
   </div>
 </template>
@@ -27,12 +26,33 @@ export default {
   props: {
     partyPokemon: Array,
   },
-  methods: {
-    remove(id) {
-      this.$emit("remove-pokemon", id);
+  data() {
+    return {
+      
     }
+  },
+  methods: {
+    remove(pokemon) {
+      this.$emit("remove-pokemon", pokemon);
+    },
+    
   }
 };
 </script>
 
-<style></style>
+<style>
+
+.width {
+  max-width: 11%;
+}
+.partytext{
+  padding-top: 10px;
+  margin-bottom: -40px;
+}
+.partytext span {
+  color:maroon;
+}
+
+
+
+  </style>

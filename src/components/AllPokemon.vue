@@ -1,7 +1,7 @@
 <template>
   <div id="allPokemon">
     <div class="input-group mb-3">
-        <input type="text" class="searchBar" id="searchInput" placeholder="Pokemon name or number" v-model="searchString">
+        <input type="text" class="searchbar" id="searchInput" placeholder="search pokemon name or #" v-model="searchString">
     </div>
     <div class="pokemon-outer" id="party-pokemon" >
       <PokemonCard 
@@ -11,7 +11,6 @@
         @click-pokemon="remove"
         />
     </div>
-    <button class="addMoreButton" type="button" @click="addMore" >Add More</button>
     <!-- <h1 v-if="loadingShowing">Loading...</h1> -->
   </div>
 </template>
@@ -87,23 +86,10 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
 }
-.addMoreButton {
-    min-width: 20vh;
-    height: 100px;
-    align-items: center;
-    flex-basis: 15%;
-    background-color: #eee;
-    border-radius: 10px;
-    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
-    padding: 20px;
-    text-align: center;
-    transform: scale(1);
-    transition: all 0.2s;
-    cursor: pointer;
-    margin-bottom: 5vh;
-}
-.searchBar {
-    width: 28vh;
-    height: 3vh;
+
+.searchbar {
+    width: 25vh;
+    height: 25px;
+    
 }
   </style>
